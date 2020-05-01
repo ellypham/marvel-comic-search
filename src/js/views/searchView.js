@@ -9,7 +9,7 @@ export const renderCharacterResult = character => {
     <div class="character_result">
       <h2>${character.name}</h2>
       <p>${character.description}</p>
-      <img src=${character.thumbnail.path} >
+      <img src=${character.thumbnail.path}.${character.thumbnail.extension} >
     </div>
   `
   elements.searchResult.insertAdjacentHTML("afterbegin", markup);
