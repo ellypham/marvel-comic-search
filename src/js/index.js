@@ -20,10 +20,8 @@ const controlSearch = async (e) =>{
   if(query) {
     try {
       await state.search.getResults();
-      console.log('state ', state.search);
       searchView.renderCharacterResult(state.search.result[0]);
       controlComics();
-      console.log('state comics ', state.characterId);
     } catch (error) {
       console.log(error)
     }
@@ -44,7 +42,6 @@ const controlComics = async () => {
   if(charId) {
     try {
       await state.comicResults.getComics();
-      console.log('state search comic results', state.comicResults.comicResults)
       comicsView.renderComicResults(state.comicResults.comicResults)
     } catch (error) {
       console.log(error);
