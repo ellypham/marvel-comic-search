@@ -1,0 +1,63 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  height: 10rem;
+}
+
+.character__info {
+  display: flex;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.character__copy {
+  width: 50rem;
+}
+
+.character__info img{
+  width: 25rem;
+  height: auto;
+  object-fit: cover;
+
+}
+
+.comics__results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.comics__results li {
+  width: 30%;
+  padding-top: 5rem;
+}
+
+.comics__results img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+}
