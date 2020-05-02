@@ -10,6 +10,7 @@ export default class Comics {
     try {
       const res = await axios (`https://gateway.marvel.com/v1/public/characters/${this.id}/comics?apikey=${publickey}`);
       console.log('comics res ', res.data.data.results);
+      this.comicResults = res.data.data.results;
     } catch (error) {
       console.log(error);
     }
