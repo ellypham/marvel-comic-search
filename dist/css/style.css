@@ -1,3 +1,12 @@
+/* 
+Red: #e62429
+Gold: #c6a972
+
+font-family: 'Roboto Condensed', sans-serif;
+
+*/
+
+
 *,
 *:after,
 *:before {
@@ -11,8 +20,25 @@ html {
 }
 
 body {
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 1.8rem;
   box-sizing: border-box;
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+
+h2, h3 {
+  font-size: 3.4rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.6rem;
 }
 
 li {
@@ -26,16 +52,97 @@ li {
 
 .header {
   height: 10rem;
+  background-image: url("../img/background_header.jpg");
+  /* background-color: #151515; */
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  color: white;
+}
+
+.header h1 {
+  text-transform: uppercase;
+}
+
+.header__copy {
+  max-width: 100%;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.logo {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+}
+
+.search {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+/* label {
+  color: #E5E5E5;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+} */
+
+input {
+  height: 4rem;
+  width: 30rem;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 3px solid white;
+  margin-top: 3rem;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.6rem;
+  padding-left: 3rem;
+}
+
+::placeholder {
+  color: #E5E5E5;
+  font-size: 1.6rem;
+  padding-left: 3rem;
+}
+
+.search__input {
+  max-width: 30%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* .search__field {
+  position: relative;
+} */
+
+.search__icon {
+  position: absolute;
+  top: 6rem;
+  left: 0;
 }
 
 .character__info {
   display: flex;
   max-width: 80%;
   margin: 0 auto;
+  justify-content: space-between;
+  margin-top: 4rem;
 }
 
 .character__copy {
   width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .character__info img{
@@ -52,8 +159,15 @@ li {
 }
 
 .comics__results li {
-  width: 30%;
+  width: 22%;
   padding-top: 5rem;
+}
+
+.comics__results p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  max-width: 65%;
+  margin: 0 auto;
 }
 
 .comics__results img {
