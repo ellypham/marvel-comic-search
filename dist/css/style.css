@@ -1,6 +1,8 @@
 /* 
 Red: #e62429
 Gold: #c6a972
+DarkGrey: #202020
+LightGrey: #999999
 
 font-family: 'Roboto Condensed', sans-serif;
 
@@ -48,6 +50,7 @@ li {
 .container {
   max-width: 80%;
   margin: 0 auto;
+  /* border: 1px solid black; */
 }
 
 .header {
@@ -113,7 +116,6 @@ input {
 }
 
 .search__input {
-  max-width: 30%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -121,21 +123,28 @@ input {
 }
 
 /* .search__field {
-  position: relative;
+  margin: 0 auto;
 } */
+
+.search__field_container {
+  position: relative;
+  max-width: 70%;
+  margin: 0 auto;
+}
 
 .search__icon {
   position: absolute;
-  top: 6rem;
-  left: 0;
+  top: 4.5rem;
+  left: 1.5rem;
 }
 
 .character__info {
   display: flex;
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
   justify-content: space-between;
   margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .character__copy {
@@ -143,13 +152,19 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 2rem;
 }
 
 .character__info img{
   width: 25rem;
-  height: auto;
+  height: 30rem;
   object-fit: cover;
+  border: 5px solid #202020;
 
+}
+
+.comics {
+  background-color: #202020;
 }
 
 .comics__results {
@@ -161,6 +176,8 @@ input {
 .comics__results li {
   width: 22%;
   padding-top: 5rem;
+  /* margin: 0 auto; */
+  text-align: center;
 }
 
 .comics__results p {
@@ -168,10 +185,11 @@ input {
   font-weight: 700;
   max-width: 65%;
   margin: 0 auto;
+  color: white;
 }
 
 .comics__results img {
   width: 20rem;
-  height: 20rem;
+  height: 30rem;
   object-fit: cover;
 }

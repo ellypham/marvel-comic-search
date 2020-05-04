@@ -10,11 +10,13 @@ export const clearResults = () => {
 
 export const renderCharacterResult = character => {
   const markup = `
-    <div class="character__info">
+    <div class="container">
+      <div class="character__info">
       <img src=${character.thumbnail.path}.${character.thumbnail.extension} >
       <div class="character__copy">
         <h2>${character.name}</h2>
         <p>${character.description}</p>
+      </div>
       </div>
     </div>
   `
