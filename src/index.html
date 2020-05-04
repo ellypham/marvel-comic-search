@@ -4,18 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/25c3b774dd.js" crossorigin="anonymous"></script>
   <title>Marvel API</title>
 </head>
 <body>
-  <div class="container">
     
     <header class="header">
-      <form class="search">
-        <label for="search">Search Marvel Character</label>
-        <input class="search__field" type="text" placeholder="Type character name">
-        <button class="btn search__btn">Search</button>
-      </form>
+      <div class="container">
+        <div class="logo">
+          <img src="img/Marvel_Logo.png" alt="">
+        </div>
+        <div class="header__copy">
+          <h1>Comic Reads</h1>
+        </div>
+        <form class="search">
+          <div class="search__input">
+              <label for="search">Search for comics by character:</label>
+                <span class="search__icon">
+                  <i class="fas fa-search"></i>
+                </span>
+                <input class="search__field" type="text" placeholder="Type character name">
+          </div>
+        </form>
+      </div>
     </header>
+
+    <div class="container">
 
     <div class="search__result">
         
