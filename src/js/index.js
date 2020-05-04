@@ -13,6 +13,7 @@ const state = {};
 const controlSearch = async (e) =>{
   e.preventDefault();
   const query = searchView.getInput();
+  searchView.clearInput();
   console.log({query});
   
   state.search = new Search(query);
@@ -20,6 +21,8 @@ const controlSearch = async (e) =>{
   if(query) {
     try {
       await state.search.getResults();
+      searchView.clearResults();
+      comicsView.clearResults();
       searchView.renderCharacterResult(state.search.result[0]);
       controlComics();
     } catch (error) {
