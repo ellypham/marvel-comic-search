@@ -4,6 +4,10 @@ export const getInput = () => elements.searchInput.value;
 
 export const clearInput = () => elements.searchInput.value = "";
 
+export const clearResults = () => {
+  elements.searchResult.innerHTML = "";
+}
+
 export const renderCharacterResult = character => {
   const markup = `
     <div class="character__info">
