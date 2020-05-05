@@ -106,13 +106,12 @@ input {
   color: white;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 1.6rem;
-  padding-left: 3rem;
+  padding-left: 4rem;
 }
 
 ::placeholder {
   color: #E5E5E5;
   font-size: 1.6rem;
-  padding-left: 3rem;
 }
 
 .search__input {

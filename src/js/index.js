@@ -31,9 +31,6 @@ const controlSearch = async (e) =>{
   }
 }
 
-//handlers
-elements.searchForm.addEventListener('submit', controlSearch);
-
 /*
 * Comics Controller
 */
@@ -52,3 +49,15 @@ const controlComics = async () => {
   }
 };
 
+const paginationButtons = (e) => {
+  const btn = e.target;
+  if(btn) {
+    const goToPage = parseInt(btn.dataset.goto, 10);
+    comicsView.clearResults();
+    comicsView.renderComicResults(state.comicResults.comicResults, goToPage);
+  }
+}
+
+//handlers
+elements.searchForm.addEventListener('submit', controlSearch);
+elements.comicPages.addEventListener('click', paginationButtons);
