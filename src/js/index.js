@@ -50,7 +50,7 @@ const controlComics = async () => {
 };
 
 const paginationButtons = (e) => {
-  const btn = e.target;
+  const btn = e.target.closest('.btn, .btn')
   if(btn) {
     const goToPage = parseInt(btn.dataset.goto, 10);
     comicsView.clearResults();

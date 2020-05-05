@@ -16,21 +16,23 @@ const renderComic = comic => {
 }
 
 const createPageButtons = (page, type) => `
-  <button btn data-goto=${type === 'prev' ? page - 1 : page + 1}>Page ${type === 'prev' ? page - 1 : page + 1}</button>
+  <button class="btn" data-goto=${type === 'left' ? page - 1 : page + 1}>
+    <i class="fas fa-chevron-${type === 'left' ? 'left' : 'right'} fa-7x"></i>
+  </button>
 `;
 
 const renderPageButtons = (page, numResults, resPerPage) => {
   const pages = Math.ceil(numResults / resPerPage);
   let button;
   if(page === 1 && pages > 1) {
-    button = createPageButtons(page, 'next');
+    button = createPageButtons(page, 'right');
   } else if(page < pages) {
     button = `
-      ${createPageButtons(page, 'prev')}
-      ${createPageButtons(page, 'next')}
+      ${createPageButtons(page, 'left')}
+      ${createPageButtons(page, 'right')}
     `
   } else if(page === pages && pages > 1) {
-    button = createPageButtons(page, 'prev');
+    button = createPageButtons(page, 'left');
   }
 
   elements.comicPages.insertAdjacentHTML('afterbegin', button);
