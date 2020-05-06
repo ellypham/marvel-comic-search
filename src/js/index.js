@@ -3,6 +3,8 @@ import Comics from './models/Comics';
 import List from './models/List';
 import * as searchView from './views/searchView';
 import * as comicsView from './views/comicsView';
+import * as listView from './views/listView';
+
 import { elements } from './views/base';
 
 const state = {};
@@ -74,10 +76,10 @@ const controlList = (e) => {
   if(!state.list) state.list = new List();
 
   state.list.addItem(comicName, comicImg);
-
-  console.log('state list', state.list)
-  
-
+  listView.clearResults();
+  state.list.items.forEach(el => {
+    listView.renderItem(el)
+  });
   
 }
 
