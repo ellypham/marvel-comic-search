@@ -10,14 +10,17 @@ const renderComic = comic => {
     <li>
       <img src=${comic.thumbnail.path}.${comic.thumbnail.extension} />
       <p>${comic.title}</p>
+      <button class="btn__list">Add to list</button>
     </li>
   `
   elements.comicResults.insertAdjacentHTML('beforeend', markup);
 }
 
 const createPageButtons = (page, type) => `
-  <button class="btn" data-goto=${type === 'left' ? page - 1 : page + 1}>
-    <i class="fas fa-chevron-${type === 'left' ? 'left' : 'right'} fa-7x"></i>
+  <button class="btn__pagination" data-goto=${type === 'left' ? page - 1 : page + 1}>
+    <span class="chevron__icon">
+      <i class="fas fa-chevron-${type === 'left' ? 'left' : 'right'} fa-7x"></i>
+    </span>
   </button>
 `;
 
