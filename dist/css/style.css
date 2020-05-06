@@ -193,15 +193,27 @@ input {
   object-fit: cover;
 }
 
-/* .comics__pages {
+.comics__pages {
   position: relative;
 }
 
-
-
-
-fa-chevron-left {
+.fa-chevron-left {
   position: absolute;
-  top: -17rem;
-  left: 0;
-} */
+  top: -21rem;
+  left: -7rem;
+}
+
+.fa-chevron-right {
+  position: absolute;
+  top: -21rem;
+  right: -7rem;
+}
+
+.btn__pagination {
+  background-color: #202020;
+  border: none;
+}
+
+.chevron__icon {
+  color: white
+}
