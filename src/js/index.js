@@ -1,5 +1,6 @@
 import Search from './models/Search';
 import Comics from './models/Comics';
+import List from './models/List';
 import * as searchView from './views/searchView';
 import * as comicsView from './views/comicsView';
 import { elements } from './views/base';
@@ -50,7 +51,8 @@ const controlComics = async () => {
 };
 
 const paginationButtons = (e) => {
-  const btn = e.target.closest('.btn, .btn')
+
+  const btn = e.target.closest('.btn__pagination');
   if(btn) {
     const goToPage = parseInt(btn.dataset.goto, 10);
     comicsView.clearResults();
@@ -58,6 +60,28 @@ const paginationButtons = (e) => {
   }
 }
 
+/*
+* List Controller
+*/
+// For testing purposes
+window.state = state
+
+const controlList = (e) => {
+  const comic = e.target.closest('.btn__list, btn__list *');
+  const comicName = comic.previousSibling.previousSibling.innerHTML;
+  const comicImg = comic.previousSibling.previousSibling.previousSibling.previousSibling.src;
+
+  if(!state.list) state.list = new List();
+
+  state.list.addItem(comicName, comicImg);
+
+  console.log('state list', state.list)
+  
+
+  
+}
+
 //handlers
 elements.searchForm.addEventListener('submit', controlSearch);
 elements.comicPages.addEventListener('click', paginationButtons);
+elements.comicResults.addEventListener('click', controlList);
