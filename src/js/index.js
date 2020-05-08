@@ -1,27 +1,27 @@
-import Search from './models/Search';
-import Comics from './models/Comics';
-import List from './models/List';
-import * as searchView from './views/searchView';
-import * as comicsView from './views/comicsView';
-import * as listView from './views/listView';
+import Search from "./models/Search";
+import Comics from "./models/Comics";
+import List from "./models/List";
+import * as searchView from "./views/searchView";
+import * as comicsView from "./views/comicsView";
+import * as listView from "./views/listView";
 
-import { elements } from './views/base';
+import { elements } from "./views/base";
 
 const state = {};
 
 /*
-* Search Controller
-*/
+ * Search Controller
+ */
 
-const controlSearch = async (e) =>{
+const controlSearch = async (e) => {
   e.preventDefault();
   const query = searchView.getInput();
   searchView.clearInput();
-  console.log({query});
-  
+  console.log({ query });
+
   state.search = new Search(query);
 
-  if(query) {
+  if (query) {
     try {
       await state.search.getResults();
       searchView.clearResults();
@@ -29,23 +29,23 @@ const controlSearch = async (e) =>{
       searchView.renderCharacterResult(state.search.result[0]);
       controlComics();
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
-}
+};
 
 /*
-* Comics Controller
-*/
+ * Comics Controller
+ */
 
-const controlComics = async () => { 
-  const charId = state.search.result[0].id
+const controlComics = async () => {
+  const charId = state.search.result[0].id;
   state.comicResults = new Comics(charId);
-  
-  if(charId) {
+
+  if (charId) {
     try {
       await state.comicResults.getComics();
-      comicsView.renderComicResults(state.comicResults.comicResults)
+      comicsView.renderComicResults(state.comicResults.comicResults);
     } catch (error) {
       console.log(error);
     }
@@ -53,46 +53,43 @@ const controlComics = async () => {
 };
 
 const paginationButtons = (e) => {
-
-  const btn = e.target.closest('.btn__pagination');
-  if(btn) {
+  const btn = e.target.closest(".btn__pagination");
+  if (btn) {
     const goToPage = parseInt(btn.dataset.goto, 10);
     comicsView.clearResults();
     comicsView.renderComicResults(state.comicResults.comicResults, goToPage);
   }
-}
+};
 
 /*
-* List Controller
-*/
+ * List Controller
+ */
 // For testing purposes
-window.state = state
+window.state = state;
 
 const controlList = (e) => {
-  const comic = e.target.closest('.btn__list, btn__list *');
+  const comic = e.target.closest(".btn__list, btn__list *");
   const comicName = comic.previousSibling.previousSibling.innerHTML;
-  const comicImg = comic.previousSibling.previousSibling.previousSibling.previousSibling.src;
+  const comicImg =
+    comic.previousSibling.previousSibling.previousSibling.previousSibling.src;
 
-  if(!state.list) state.list = new List();
+  if (!state.list) state.list = new List();
 
   state.list.addItem(comicName, comicImg);
   listView.clearResults();
-  state.list.items.forEach(el => {
-    listView.renderItem(el)
+  state.list.items.forEach((el) => {
+    listView.renderItem(el);
   });
-  
-}
+};
 
 //delete item from reading list
-elements.readList.addEventListener('click', (e) => {
-  const id = e.target.closest('.read__item').dataset.itemid;
+elements.readList.addEventListener("click", (e) => {
+  const id = e.target.closest(".btn__delete").dataset.itemid;
   state.list.deleteItem(id);
   listView.deleteItem(id);
-  
-})
+});
 
 //handlers
-elements.searchForm.addEventListener('submit', controlSearch);
-elements.comicPages.addEventListener('click', paginationButtons);
-elements.comicResults.addEventListener('click', controlList);
-
+elements.searchForm.addEventListener("submit", controlSearch);
+elements.comicPages.addEventListener("click", paginationButtons);
+elements.comicResults.addEventListener("click", controlList);

@@ -1,22 +1,24 @@
-import { elements } from './base';
+import { elements } from "./base";
 
 export const clearResults = () => {
   elements.readList.innerHTML = "";
-}
+};
 
-export const renderItem = item => {
+export const renderItem = (item) => {
   const markup = `
-    <li class='read__item' data-itemid=${item.id}>
+    <li class='read__item' >
+      <input type='checkbox' id='read'/>
       <img src=${item.img} />
       <p>${item.title}</p>
-      <button class='btn__delete'>delete</button>
+      <button class='btn__delete' data-itemid=${item.id}>delete</button>
     </li>
-  `
+  `;
 
-  elements.readList.insertAdjacentHTML('beforeend', markup);
-}
+  elements.readList.insertAdjacentHTML("beforeend", markup);
+};
 
-export const deleteItem = id => {
-  const item = document.querySelector('[data-itemid="${id}"]');
-  if(item) item.parentElement.removeChild(item);
-}
+export const deleteItem = (id) => {
+  const li = document.querySelector(".read__item");
+  const deleteItem = document.querySelector(`[data-itemid="${id}"]`);
+  if (deleteItem) li.parentElement.removeChild(deleteItem.parentElement);
+};
