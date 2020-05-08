@@ -83,7 +83,16 @@ const controlList = (e) => {
   
 }
 
+//delete item from reading list
+elements.readList.addEventListener('click', (e) => {
+  const id = e.target.closest('.read__item').dataset.itemid;
+  state.list.deleteItem(id);
+  listView.deleteItem(id);
+  
+})
+
 //handlers
 elements.searchForm.addEventListener('submit', controlSearch);
 elements.comicPages.addEventListener('click', paginationButtons);
 elements.comicResults.addEventListener('click', controlList);
+
