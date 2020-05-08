@@ -193,6 +193,14 @@ input {
   object-fit: cover;
 }
 
+.btn__list {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border: none;
+  background-color: red;
+  color: white;
+}
+
 .comics__pages {
   position: relative;
 }
@@ -217,3 +225,33 @@ input {
 .chevron__icon {
   color: white
 }
+
+.read {
+  max-width: 80%;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+
+.read h2 {
+  text-align: center;
+  margin: 4rem;
+}
+
+.read__list {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.read__item {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.read__item img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+}
+
