@@ -84,9 +84,18 @@ const controlList = (e) => {
 
 //delete item from reading list
 elements.readList.addEventListener("click", (e) => {
-  const id = e.target.closest(".btn__delete").dataset.itemid;
-  state.list.deleteItem(id);
-  listView.deleteItem(id);
+  const id = e.target.closest(".read__item").dataset.itemid;
+  if (e.target.matches(".btn__delete")) {
+    state.list.deleteItem(id);
+    listView.deleteItem(id);
+  }
+});
+
+//toggle item from reading list
+elements.readList.addEventListener("change", (e) => {
+  const id = e.target.parentElement.dataset.itemid;
+  state.list.toggleItem(id);
+  listView.toggleItem(id);
 });
 
 //handlers

@@ -6,11 +6,11 @@ export const clearResults = () => {
 
 export const renderItem = (item) => {
   const markup = `
-    <li class='read__item' >
+    <li class='read__item' data-itemid=${item.id}>
       <input type='checkbox' id='read'/>
       <img src=${item.img} />
       <p>${item.title}</p>
-      <button class='btn__delete' data-itemid=${item.id}>delete</button>
+      <button class='btn__delete'>delete</button>
     </li>
   `;
 
@@ -18,7 +18,11 @@ export const renderItem = (item) => {
 };
 
 export const deleteItem = (id) => {
-  const li = document.querySelector(".read__item");
-  const deleteItem = document.querySelector(`[data-itemid="${id}"]`);
-  if (deleteItem) li.parentElement.removeChild(deleteItem.parentElement);
+  const item = document.querySelector(`[data-itemid="${id}"]`);
+  if (item) item.parentElement.removeChild(item);
+};
+
+export const toggleItem = (id) => {
+  const toggleItem = document.querySelector(`[data-itemid="${id}"]`);
+  if (toggleItem) toggleItem.classList.toggle("read__item-strike");
 };
