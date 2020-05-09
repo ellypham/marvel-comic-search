@@ -1,4 +1,4 @@
-/* 
+/*
 Red: #e62429
 Gold: #c6a972
 DarkGrey: #202020
@@ -247,6 +247,10 @@ input {
   justify-content: space-between;
   width: 60%;
   margin: 0 auto;
+}
+
+.read__item-strike {
+  text-decoration: line-through;
 }
 
 .read__item img {
