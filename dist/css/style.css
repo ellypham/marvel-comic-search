@@ -60,7 +60,7 @@ li {
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
-  height: 500px;
+  height: 400px;
   color: white;
 }
 
@@ -135,6 +135,41 @@ input {
   position: absolute;
   top: 4.5rem;
   left: 1.5rem;
+}
+
+.featured-characters h2 {
+  margin: 4rem 0;
+}
+
+.featured-characters__list {
+  max-width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.featured-characters__card {
+  max-width: 16%;
+  margin-bottom: 2rem;
+}
+
+.card-img {
+  background-color: #e62429;
+}
+
+.card-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.card-body {
+  height: 10rem;
+  background: black;
+}
+
+.card-body p {
+  color: white;
 }
 
 .character__info {
