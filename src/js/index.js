@@ -15,7 +15,16 @@ const state = {};
 
 const controlSearch = async (e) => {
   e.preventDefault();
-  const query = searchView.getInput();
+  let query;
+  console.log(
+    e.target.closest(".featured-characters__card, .featured-characters__card *")
+  );
+  if (e.target.closest(".search")) {
+    query = searchView.getInput();
+  } else if (e.target.closest(".featured-characters__card")) {
+    query = e.target.closest(".featured-characters__card").dataset.charname;
+  }
+
   searchView.clearInput();
   console.log({ query });
 
@@ -100,5 +109,6 @@ elements.readList.addEventListener("change", (e) => {
 
 //handlers
 elements.searchForm.addEventListener("submit", controlSearch);
+elements.characterList.addEventListener("click", controlSearch);
 elements.comicPages.addEventListener("click", paginationButtons);
 elements.comicResults.addEventListener("click", controlList);
