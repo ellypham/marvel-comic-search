@@ -149,9 +149,10 @@ input {
 }
 
 .featured-characters__card {
-  max-width: 16%;
-  margin-bottom: 2rem;
+  max-width: 20%;
+  margin: 2rem;
 }
+
 
 .card-img {
   background-color: #e62429;
@@ -163,13 +164,35 @@ input {
   object-fit: contain;
 }
 
+.card-body::before {
+  content: " ";
+  height: 0%;
+  width: 100%;
+  background: #e62429;
+  position: absolute;
+  z-index: 3;
+  transition: .3s ease;
+  top: 0;
+}
+
 .card-body {
   height: 10rem;
   background: black;
+  position: relative;
+}
+
+.featured-characters__card:hover .card-body::before {
+  height: 100%;
+  background: #e62429;
 }
 
 .card-body p {
+  font-size: 1.8rem;
+  text-transform: uppercase;
   color: white;
+  position: absolute;
+  left: 2rem;
+  z-index: 100;
 }
 
 .character__info {
