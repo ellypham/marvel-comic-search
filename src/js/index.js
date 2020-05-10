@@ -26,6 +26,7 @@ const controlSearch = async (e) => {
   }
 
   searchView.clearInput();
+  searchView.hideFeature();
   console.log({ query });
 
   state.search = new Search(query);
@@ -42,6 +43,15 @@ const controlSearch = async (e) => {
     }
   }
 };
+
+elements.searchResult.addEventListener("click", (e) => {
+  console.log("search e", e.target.matches(".back"));
+  if (e.target.matches(".back")) {
+    searchView.showFeature();
+    searchView.clearResults();
+    comicsView.clearResults();
+  }
+});
 
 /*
  * Comics Controller
@@ -94,7 +104,7 @@ const controlList = (e) => {
 //delete item from reading list
 elements.readList.addEventListener("click", (e) => {
   const id = e.target.closest(".read__item").dataset.itemid;
-  if (e.target.matches(".btn__delete")) {
+  if (e.target.matches(".btn__delete, .btn__delete *")) {
     state.list.deleteItem(id);
     listView.deleteItem(id);
   }
@@ -107,8 +117,15 @@ elements.readList.addEventListener("change", (e) => {
   listView.toggleItem(id);
 });
 
+elements.readListBtn.addEventListener("click", () => {
+  listView.showReadList();
+});
+
+//
+elements.panelCloseBtn.addEventListener("click", listView.hideReadList);
+
 //handlers
 elements.searchForm.addEventListener("submit", controlSearch);
-elements.characterList.addEventListener("click", controlSearch);
+elements.featureList.addEventListener("click", controlSearch);
 elements.comicPages.addEventListener("click", paginationButtons);
 elements.comicResults.addEventListener("click", controlList);
