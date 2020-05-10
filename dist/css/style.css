@@ -25,6 +25,7 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 1.8rem;
   box-sizing: border-box;
+  /* position: relative; */
 }
 
 h1 {
@@ -74,6 +75,23 @@ li {
   text-align: center;
 }
 
+.btn__read-list {
+  border: none;
+  background: white;
+  margin-top: 1.4rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.btn__close-read-panel {
+  border: none;
+  background: none;
+  padding: 1rem;
+}
+
 .logo {
   text-align: center;
   padding-top: 2rem;
@@ -87,7 +105,7 @@ li {
 
 .search {
   text-align: center;
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 
 /* label {
@@ -98,7 +116,7 @@ li {
 
 input {
   height: 4rem;
-  width: 30rem;
+  /* width: 30rem; */
   background-color: transparent;
   border: 0;
   border-bottom: 3px solid white;
@@ -195,6 +213,11 @@ input {
   z-index: 100;
 }
 
+.back {
+  margin: 2rem 0;
+  text-decoration: underline;
+}
+
 .character__info {
   display: flex;
   max-width: 90%;
@@ -284,11 +307,23 @@ input {
   color: white
 }
 
-.read {
-  max-width: 80%;
+.read__panel {
+  /* max-width: 80%; */
+  width: 0%;
   margin: 0 auto;
-  /* border: 1px solid red; */
+  height: 100vh;
+  background: white;
+  border: 2px solid black;
+  transition: 0.5s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* display: none; */
 }
+
+/* .read__panel a {
+
+} */
 
 .read h2 {
   text-align: center;
@@ -315,5 +350,10 @@ input {
   width: 4rem;
   height: 4rem;
   object-fit: contain;
+}
+
+.btn__delete {
+  border: none;
+  background: none;
 }
 
