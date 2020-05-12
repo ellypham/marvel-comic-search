@@ -27,7 +27,6 @@ const controlSearch = async (e) => {
 
   searchView.clearInput();
   searchView.hideFeature();
-  console.log({ query });
 
   state.search = new Search(query);
 
