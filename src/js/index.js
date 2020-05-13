@@ -111,7 +111,7 @@ elements.readList.addEventListener("click", (e) => {
 
 //toggle item from reading list
 elements.readList.addEventListener("change", (e) => {
-  const id = e.target.parentElement.dataset.itemid;
+  const id = e.target.parentElement.parentElement.dataset.itemid;
   state.list.toggleItem(id);
   listView.toggleItem(id);
 });
