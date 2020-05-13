@@ -17,9 +17,12 @@ export const hideReadList = () => {
 export const renderItem = (item) => {
   const markup = `
     <li class='read__item' data-itemid=${item.id}>
-      <input type='checkbox' id='read'/>
+      <label>
+        ${item.title}
+        <input type='checkbox' id='read' class='read__checkbox'/>
+        <span class='read__checkmark'></span>
+      </label>
       <img src=${item.img} />
-      <p>${item.title}</p>
       <button class='btn__delete'>
         <i class="fas fa-times fa-2x"></i>
       </button>
