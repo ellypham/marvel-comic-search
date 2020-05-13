@@ -104,7 +104,7 @@ li {
   margin-top: 3rem;
 }
 
-input {
+.search__field {
   height: 4rem;
   /* width: 30rem; */
   background-color: transparent;
@@ -312,6 +312,7 @@ input {
 .read__list {
   max-width: 80%;
   margin: 0 auto;
+  /* position: relative; */
 }
 
 .read__item {
@@ -319,6 +320,56 @@ input {
   justify-content: space-between;
   width: 60%;
   margin: 0 auto;
+  position: relative;
+}
+
+.read__item label {
+  height: 10rem;
+  margin-left: 4rem;
+}
+
+.read__checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.read__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #eee;
+}
+
+.read__checkmark:hover {
+  background-color: #ccc;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.read__checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.read__item input:checked ~ .read__checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.read__checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
 
 .read__item-strike {
