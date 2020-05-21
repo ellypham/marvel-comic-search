@@ -14,19 +14,21 @@ export const elements = {
 };
 
 export const elementStrings = {
-  loader: 'loader'
+  loader: 'loader-wrapper'
 }
 
 export const renderLoader = parent => {
   console.log('renderloader')
   console.log('parent', parent)
   const loader = `
-    <div class="${elementStrings.loader}">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>  
+    <div class='${elementStrings.loader}'>
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>  
+    </div>
   `
   parent.insertAdjacentHTML('afterbegin', loader);
 }
