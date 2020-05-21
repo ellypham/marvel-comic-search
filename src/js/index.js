@@ -5,7 +5,7 @@ import * as searchView from "./views/searchView";
 import * as comicsView from "./views/comicsView";
 import * as listView from "./views/listView";
 
-import { elements } from "./views/base";
+import { elements, renderLoader, clearLoader } from "./views/base";
 
 const state = {};
 
@@ -16,9 +16,6 @@ const state = {};
 const controlSearch = async (e) => {
   e.preventDefault();
   let query;
-  console.log(
-    e.target.closest(".featured-characters__card, .featured-characters__card *")
-  );
   if (e.target.closest(".search")) {
     query = searchView.getInput();
   } else if (e.target.closest(".featured-characters__card")) {
@@ -35,7 +32,9 @@ const controlSearch = async (e) => {
       await state.search.getResults();
       searchView.clearResults();
       comicsView.clearResults();
+      // renderLoader(elements.searchResult);
       searchView.renderCharacterResult(state.search.result[0]);
+      // clearLoader();
       controlComics();
     } catch (error) {
       console.log(error);
@@ -62,8 +61,10 @@ const controlComics = async () => {
 
   if (charId) {
     try {
+      renderLoader(elements.comicsSection);
       await state.comicResults.getComics();
       comicsView.renderComicResults(state.comicResults.comicResults);
+      clearLoader();
     } catch (error) {
       console.log(error);
     }
