@@ -1,0 +1,438 @@
+/*
+FONT:
+font-family: 'Roboto Condensed', sans-serif;
+*/
+
+
+/* COLORS */
+$red: #ff0000;
+$gold: #c6a972;
+$darkGrey: #202020;
+$lightGrey: #E5E5E5;
+$white: #ffffff;
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.8rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+
+h2, h3 {
+  font-size: 3.4rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+li {
+  list-style: none;
+}
+
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader{
+  top: 50%;
+  left: 50%;
+  background-color: black;
+}
+
+.loader span{
+  display: inline-block;
+  width: 5px;
+  height: 20px;
+  background-color: $red;
+}
+
+.loader span:nth-child(1){
+  animation: grow 1s ease-in-out infinite;
+}
+
+.loader span:nth-child(2){
+  animation: grow 1s ease-in-out 0.15s infinite;
+}
+
+.loader span:nth-child(3){
+  animation: grow 1s ease-in-out 0.30s infinite;
+}
+
+.loader span:nth-child(4){
+  animation: grow 1s ease-in-out 0.45s infinite;
+}
+
+@keyframes grow{
+  0%, 100%{
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+
+  50%{
+    -webkit-transform: scaleY(1.8);
+    -ms-transform: scaleY(1.8);
+    -o-transform: scaleY(1.8);
+    transform: scaleY(1.8);
+  }
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  height: 10rem;
+  background-image: url("../img/background_header.jpg");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  color: $white;
+}
+
+.header h1 {
+  text-transform: uppercase;
+}
+
+.header__copy {
+  max-width: 100%;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.btn__read-list {
+  border: none;
+  background: $white;
+  margin-top: 1.4rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.btn__close-read-panel {
+  border: none;
+  background: none;
+  padding: 1rem;
+}
+
+.logo {
+  text-align: center;
+  padding-top: 2rem;
+  img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.search {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.search__field {
+  height: 4rem;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 3px solid $white;
+  margin-top: 3rem;
+  color: $white;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.6rem;
+  padding-left: 4rem;
+}
+
+::placeholder {
+  color: $lightGrey;
+  font-size: 1.6rem;
+}
+
+.search__input {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.search__field_container {
+  position: relative;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.search__icon {
+  position: absolute;
+  top: 4.5rem;
+  left: 1.5rem;
+}
+
+.featured-characters h2 {
+  margin: 4rem 0;
+}
+
+.featured-characters__list {
+  max-width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.featured-characters__card {
+  max-width: 20%;
+  margin: 2rem;
+}
+
+.card-img {
+  background-color: $red;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.card-body {
+  height: 10rem;
+  background: black;
+  position: relative;
+  &:before {
+    content: " ";
+    height: 0%;
+    width: 100%;
+    background: $red;
+    position: absolute;
+    z-index: 3;
+    transition: .3s ease;
+    top: 0;
+  }
+}
+
+.featured-characters__card:hover .card-body::before {
+  height: 100%;
+  background: $red;
+}
+
+.card-body p {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: $white;
+  position: absolute;
+  left: 2rem;
+  z-index: 100;
+}
+
+.back {
+  margin: 2rem 0;
+  text-decoration: underline;
+}
+
+.character__info {
+  display: flex;
+  max-width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  img {
+    width: 25rem;
+    height: 30rem;
+    object-fit: cover;
+    border: 5px solid $darkGrey;
+  }
+}
+
+.character__copy {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.comics {
+  background-color: $darkGrey;
+  // position: relative;
+}
+
+.comics__results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  li {
+    width: 22%;
+    padding-top: 5rem;
+    text-align: center;
+  }
+}
+
+.comics__results {
+  p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    max-width: 65%;
+    margin: 0 auto;
+    color: $white;
+  }
+  img {
+    width: 20rem;
+    height: 30rem;
+    object-fit: cover;
+  }
+}
+
+.btn__list {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border: none;
+  background-color: red;
+  color: $white;
+}
+
+.comics__pages {
+  position: relative;
+}
+
+.fa-chevron-left {
+  position: absolute;
+  top: -21rem;
+  left: -7rem;
+}
+
+.fa-chevron-right {
+  position: absolute;
+  top: -21rem;
+  right: -7rem;
+}
+
+.btn__pagination {
+  background-color: $darkGrey;
+  border: none;
+}
+
+.chevron__icon {
+  color: $white
+}
+
+.read__panel {
+  width: 0%;
+  margin: 0 auto;
+  height: 100vh;
+  background: $white;
+  border: 2px solid black;
+  transition: 0.5s;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.read h2 {
+  text-align: center;
+  margin: 4rem;
+}
+
+.read__list {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.read__item {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  label {
+    height: 10rem;
+    margin-left: 4rem;
+  }
+}
+
+.read__checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.read__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #eee;
+  &:hover {
+    background-color: #ccc;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}
+
+/* Show the checkmark when checked */
+.read__item input:checked ~ .read__checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.read__checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid $white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.read__item-strike {
+  text-decoration: line-through;
+}
+
+.read__item img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+}
+
+.btn__delete {
+  border: none;
+  background: none;
+}
+
