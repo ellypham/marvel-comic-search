@@ -10,14 +10,15 @@ export default class Search {
   }
 
   async getResults() {
-    const publickey = 'b225687f4bb5b86654a2184eb87aa18b';
+    const publickey = "b225687f4bb5b86654a2184eb87aa18b";
     try {
-      const res = await axios(`https://gateway.marvel.com/v1/public/characters?name=${this.query}&apikey=${publickey}`);
+      const res = await axios(
+        `https://gateway.marvel.com/v1/public/characters?name=${this.query}&apikey=${publickey}`
+      );
       this.result = res.data.data.results;
-      console.log('api res ', this.result);
+      console.log("api res ", this.result);
     } catch (error) {
       console.log(error);
     }
   }
-
 }
