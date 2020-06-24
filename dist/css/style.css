@@ -291,6 +291,7 @@ li {
   background: #ffffff;
   border: 2px solid black;
   transition: 0.5s;
+  overflow-x: hidden;
   position: absolute;
   top: 0;
   right: 0; }
