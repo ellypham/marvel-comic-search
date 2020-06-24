@@ -158,6 +158,11 @@ li {
   top: 4.5rem;
   left: 1.5rem; }
 
+.autocomplete__card {
+  background: #ffffff;
+  color: #202020;
+  border: 1px solid black; }
+
 .featured-characters h2 {
   margin: 4rem 0; }
 

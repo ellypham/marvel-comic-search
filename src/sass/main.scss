@@ -199,6 +199,12 @@ li {
   left: 1.5rem;
 }
 
+.autocomplete__card {
+  background: $white;
+  color: $darkGrey;
+  border: 1px solid black;
+}
+
 .featured-characters h2 {
   margin: 4rem 0;
 }
