@@ -19,7 +19,7 @@
           <h1>Comic Reads</h1>
           <button class="btn__read-list">Show Comic List</button>
         </div>
-        <form class="search">
+        <form class="search" autocomplete="off">
           <div class="search__input">
               <label for="search">Search for comics by character:</label>
                 <div class="search__field_container">
@@ -27,6 +27,9 @@
                     <i class="fas fa-search"></i>
                   </span>
                   <input class="search__field" type="text" placeholder="Type character name">
+                  <div id='autocomplete__list'>
+
+                  </div>
                 </div>
           </div>
         </form>
