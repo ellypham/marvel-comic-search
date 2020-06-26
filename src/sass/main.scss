@@ -209,6 +209,11 @@ li {
   left: 1.5rem;
 }
 
+.autocomplete-active {
+  background-color: $red !important;
+  color: #ffffff;
+}
+
 .autocomplete__card {
   background: $white;
   color: $darkGrey;

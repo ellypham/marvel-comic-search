@@ -164,6 +164,10 @@ li {
   top: 4.5rem;
   left: 1.5rem; }
 
+.autocomplete-active {
+  background-color: #ff0000 !important;
+  color: #ffffff; }
+
 .autocomplete__card {
   background: #ffffff;
   color: #202020;
