@@ -17,7 +17,8 @@ const controlSearch = async (e) => {
   e.preventDefault();
   let query;
   if (e.target.closest(".search")) {
-    query = searchView.getInput();
+    query = elements.searchInput.value;
+    console.log("query", query);
   } else if (e.target.closest(".featured-characters__card")) {
     query = e.target.closest(".featured-characters__card").dataset.charname;
   }

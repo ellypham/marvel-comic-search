@@ -1,8 +1,11 @@
 import { elements } from "./base";
 
+// Autocomplete
 const autocompleteList = document.getElementById("autocomplete__list");
+let currentFocus;
 
 const searchCharacter = async (searchText) => {
+  currentFocus = -1;
   const characters = await fetch("./data/characters.json")
     .then((res) => res.json())
     .then((data) => {
@@ -23,7 +26,7 @@ const searchCharacter = async (searchText) => {
     autocompleteList.innerHTML = "";
   }
 
-  outputHtml(matches);
+  outputHtml(matches, searchText);
 };
 
 // Show results in HTML
@@ -34,24 +37,76 @@ const outputHtml = (matches) => {
         (match) => `
       <div class="autocomplete__card">
         <h4>${match}</h4>
+
       </div>
     `
       )
       .join("");
     autocompleteList.innerHTML = html;
+
+    const list = autocompleteList.getElementsByTagName("div");
+
+    list.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        elements.searchInput.value = item.getElementsByTagName(
+          "h4"
+        )[0].innerHTML;
+        autocompleteList.innerHTML = "";
+      });
+    });
   }
 };
 
-// Autocomplete
+// Autocomplete Event Listener
 elements.searchInput.addEventListener("input", () =>
   searchCharacter(elements.searchInput.value)
 );
 
-export const getInput = () => elements.searchInput.value;
+// const addActive = (x) => {
+//   /*a function to classify an item as "active":*/
+//   if (!x) return false;
+//   /*start by removing the "active" class on all items:*/
+//   removeActive(x);
+//   if (currentFocus >= x.length) currentFocus = 0;
+//   if (currentFocus < 0) currentFocus = x.length - 1;
+//   /*add class "autocomplete-active":*/
+//   x[currentFocus].classList.add("autocomplete-active");
+// };
+
+// const removeActive = (x) => {
+//   /*a function to remove the "active" class from all autocomplete items:*/
+//   for (var i = 0; i < x.length; i++) {
+//     x[i].classList.remove("autocomplete-active");
+//   }
+// };
+
+// elements.searchInput.addEventListener("keydown", (e) => {
+//   let x = autocompleteList;
+//   if (x) x = x.getElementsByTagName("div");
+//   if (e.keyCode == 40) {
+//     currentFocus++;
+//     addActive(x);
+//   } else if (e.keyCode == 38) {
+//     currentFocus--;
+//     addActive(x);
+//   } else if (e.keyCode == 13) {
+//     e.preventDefault();
+//     if (currentFocus > -1) {
+//       if (x)
+//         console.log(x[currentFocus].getElementsByTagName("h4")[0].innerHTML);
+//       elements.searchInput.value = x[currentFocus].getElementsByTagName(
+//         "h4"
+//       )[0].innerHTML;
+//     }
+//   }
+// });
+
+// export const getInput = () => {
+//   elements.searchInput.value;
+// };
 
 export const clearInput = () => {
   elements.searchInput.value = "";
-  autocompleteList.innerHTML = "";
 };
 
 export const clearResults = () => {
