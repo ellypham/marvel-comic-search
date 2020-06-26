@@ -14,12 +14,12 @@ export const elements = {
 };
 
 export const elementStrings = {
-  loader: 'loader-wrapper'
-}
+  loader: "loader-wrapper",
+};
 
-export const renderLoader = parent => {
-  console.log('renderloader')
-  console.log('parent', parent)
+export const renderLoader = (parent) => {
+  console.log("renderloader");
+  console.log("parent", parent);
   const loader = `
     <div class='${elementStrings.loader}'>
       <div class="loader">
@@ -27,13 +27,13 @@ export const renderLoader = parent => {
         <span></span>
         <span></span>
         <span></span>
-      </div>  
+      </div>
     </div>
-  `
-  parent.insertAdjacentHTML('afterbegin', loader);
-}
+  `;
+  parent.insertAdjacentHTML("afterbegin", loader);
+};
 
 export const clearLoader = () => {
   const loader = document.querySelector(`.${elementStrings.loader}`);
-  if(loader) loader.parentElement.removeChild(loader);
-}
+  if (loader) loader.parentElement.removeChild(loader);
+};
