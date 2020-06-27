@@ -62,44 +62,45 @@ elements.searchInput.addEventListener("input", () =>
   searchCharacter(elements.searchInput.value)
 );
 
-// const addActive = (x) => {
-//   /*a function to classify an item as "active":*/
-//   if (!x) return false;
-//   /*start by removing the "active" class on all items:*/
-//   removeActive(x);
-//   if (currentFocus >= x.length) currentFocus = 0;
-//   if (currentFocus < 0) currentFocus = x.length - 1;
-//   /*add class "autocomplete-active":*/
-//   x[currentFocus].classList.add("autocomplete-active");
-// };
+const addActive = (x) => {
+  /*a function to classify an item as "active":*/
+  if (!x) return false;
+  /*start by removing the "active" class on all items:*/
+  removeActive(x);
+  if (currentFocus >= x.length) currentFocus = 0;
+  if (currentFocus < 0) currentFocus = x.length - 1;
+  /*add class "autocomplete-active":*/
+  x[currentFocus].classList.add("autocomplete-active");
+};
 
-// const removeActive = (x) => {
-//   /*a function to remove the "active" class from all autocomplete items:*/
-//   for (var i = 0; i < x.length; i++) {
-//     x[i].classList.remove("autocomplete-active");
-//   }
-// };
+const removeActive = (x) => {
+  /*a function to remove the "active" class from all autocomplete items:*/
+  for (var i = 0; i < x.length; i++) {
+    x[i].classList.remove("autocomplete-active");
+  }
+};
 
-// elements.searchInput.addEventListener("keydown", (e) => {
-//   let x = autocompleteList;
-//   if (x) x = x.getElementsByTagName("div");
-//   if (e.keyCode == 40) {
-//     currentFocus++;
-//     addActive(x);
-//   } else if (e.keyCode == 38) {
-//     currentFocus--;
-//     addActive(x);
-//   } else if (e.keyCode == 13) {
-//     e.preventDefault();
-//     if (currentFocus > -1) {
-//       if (x)
-//         console.log(x[currentFocus].getElementsByTagName("h4")[0].innerHTML);
-//       elements.searchInput.value = x[currentFocus].getElementsByTagName(
-//         "h4"
-//       )[0].innerHTML;
-//     }
-//   }
-// });
+elements.searchInput.addEventListener("keydown", (e) => {
+  let x = autocompleteList;
+  if (x) x = x.getElementsByTagName("div");
+  if (e.keyCode == 40) {
+    currentFocus++;
+    addActive(x);
+  } else if (e.keyCode == 38) {
+    currentFocus--;
+    addActive(x);
+  } else if (e.keyCode == 13) {
+    // e.preventDefault();
+    if (currentFocus > -1) {
+      if (x)
+        console.log(x[currentFocus].getElementsByTagName("h4")[0].innerHTML);
+      elements.searchInput.value = x[currentFocus].getElementsByTagName(
+        "h4"
+      )[0].innerHTML;
+      autocompleteList.innerHTML = "";
+    }
+  }
+});
 
 // export const getInput = () => {
 //   elements.searchInput.value;
