@@ -283,10 +283,9 @@ li {
   border: none;
   background-color: #ff0000;
   color: #ffffff; }
-
-.btn__added {
-  background-color: #ffffff;
-  color: #ff0000; }
+  .btn__list:active, .btn__list:focus {
+    background-color: #ffffff;
+    color: #ff0000; }
 
 .comics__pages {
   position: relative; }
