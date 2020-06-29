@@ -158,6 +158,13 @@ li {
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
   font-weight: 700;
+  transition: all .2s;
+  &:hover {
+    transform: translateY(-.3rem);
+  }
+  &:active {
+    transform: translateY(-.1rem);
+  }
 }
 
 .btn__close-read-panel {
@@ -174,10 +181,6 @@ li {
     height: auto;
     object-fit: cover;
   }
-}
-
-.search__result {
-  animation: fadein 2s;
 }
 
 .search {
@@ -230,6 +233,10 @@ li {
   background: $white;
   color: $darkGrey;
   border: 1px solid black;
+}
+
+#autocomplete__list {
+  transition: 2s;
 }
 
 .featured-characters h2 {
@@ -300,6 +307,7 @@ li {
   justify-content: space-between;
   margin-top: 4rem;
   margin-bottom: 4rem;
+  animation: fadein 2s;
   img {
     width: 25rem;
     height: 30rem;
@@ -329,6 +337,7 @@ li {
     width: 22%;
     padding-top: 5rem;
     text-align: center;
+    animation: fadein 2s;
   }
 }
 
@@ -353,9 +362,20 @@ li {
   border: none;
   background-color:$red;
   color: $white;
-  &:active, &:focus {
+  transition: all .2s;
+  &:focus, &:visited {
     background-color: $white;
     color: $red;
+  }
+  &:hover {
+    background-color: $white;
+    color: $red;
+    transform: translateY(-.3rem);
+  }
+  &:active {
+    background-color: $white;
+    color: $red;
+    transform: translateY(-.1rem);
   }
 }
 

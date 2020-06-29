@@ -120,7 +120,12 @@ li {
   font-size: 1.4rem;
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
-  font-weight: 700; }
+  font-weight: 700;
+  transition: all .2s; }
+  .btn__read-list:hover {
+    transform: translateY(-0.3rem); }
+  .btn__read-list:active {
+    transform: translateY(-0.1rem); }
 
 .btn__close-read-panel {
   border: none;
@@ -134,9 +139,6 @@ li {
     width: 100px;
     height: auto;
     object-fit: cover; }
-
-.search__result {
-  animation: fadein 2s; }
 
 .search {
   text-align: center;
@@ -181,6 +183,9 @@ li {
   background: #ffffff;
   color: #202020;
   border: 1px solid black; }
+
+#autocomplete__list {
+  transition: 2s; }
 
 .featured-characters h2 {
   margin: 4rem 0; }
@@ -239,7 +244,8 @@ li {
   margin: 0 auto;
   justify-content: space-between;
   margin-top: 4rem;
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem;
+  animation: fadein 2s; }
   .character__info img {
     width: 25rem;
     height: 30rem;
@@ -263,7 +269,8 @@ li {
   .comics__results li {
     width: 22%;
     padding-top: 5rem;
-    text-align: center; }
+    text-align: center;
+    animation: fadein 2s; }
 
 .comics__results p {
   font-size: 1.4rem;
@@ -282,10 +289,19 @@ li {
   margin-top: 1rem;
   border: none;
   background-color: #ff0000;
-  color: #ffffff; }
-  .btn__list:active, .btn__list:focus {
+  color: #ffffff;
+  transition: all .2s; }
+  .btn__list:focus, .btn__list:visited {
     background-color: #ffffff;
     color: #ff0000; }
+  .btn__list:hover {
+    background-color: #ffffff;
+    color: #ff0000;
+    transform: translateY(-0.3rem); }
+  .btn__list:active {
+    background-color: #ffffff;
+    color: #ff0000;
+    transform: translateY(-0.1rem); }
 
 .comics__pages {
   position: relative; }
