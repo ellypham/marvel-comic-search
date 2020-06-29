@@ -50,6 +50,12 @@ li {
   to {
     opacity: 0; } }
 
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 .loader {
   top: 50%;
   left: 50%;
@@ -129,6 +135,9 @@ li {
     height: auto;
     object-fit: cover; }
 
+.search__result {
+  animation: fadein 2s; }
+
 .search {
   text-align: center;
   margin-top: 3rem; }
@@ -180,7 +189,8 @@ li {
   max-width: 95%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; }
+  justify-content: space-between;
+  animation: fadein 2s; }
 
 .featured-characters__card {
   max-width: 20%;
@@ -271,8 +281,12 @@ li {
   padding: 0.5rem;
   margin-top: 1rem;
   border: none;
-  background-color: red;
+  background-color: #ff0000;
   color: #ffffff; }
+
+.btn__added {
+  background-color: #ffffff;
+  color: #ff0000; }
 
 .comics__pages {
   position: relative; }

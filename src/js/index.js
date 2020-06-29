@@ -88,6 +88,7 @@ window.state = state;
 
 const controlList = (e) => {
   const comic = e.target.closest(".btn__list, btn__list *");
+  comic.classList.add("btn__added");
   const comicName = comic.previousSibling.previousSibling.innerHTML;
   const comicImg =
     comic.previousSibling.previousSibling.previousSibling.previousSibling.src;
