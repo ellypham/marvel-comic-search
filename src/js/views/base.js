@@ -44,4 +44,4 @@ export const clearLoader = setInterval(() => {
   } else {
     loader.parentElement.removeChild(loader);
   }
-}, 100);
+}, 200);
