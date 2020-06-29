@@ -30,8 +30,10 @@ const controlSearch = async (e) => {
 
   if (query) {
     try {
-      await state.search.getResults();
       renderLoader(elements.searchResult);
+      await state.search.getResults();
+      searchView.clearResults();
+      comicsView.clearResults();
       searchView.renderCharacterResult(state.search.result[0]);
       controlComics();
     } catch (error) {
