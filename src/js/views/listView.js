@@ -21,7 +21,9 @@ export const renderItem = (item) => {
     }' data-itemid=${item.id}>
       <label>
         ${item.title}
-        <input type='checkbox' id='read' class='read__checkbox'/>
+        <input type='checkbox' id='read' class='read__checkbox' ${
+          item.read === true ? "checked" : ""
+        }/>
         <span class='read__checkmark'></span>
       </label>
       <img src=${item.img} />
