@@ -11,6 +11,7 @@ export const elements = {
   readList: document.querySelector(".read__list"),
   readPanel: document.querySelector(".read__panel"),
   panelCloseBtn: document.querySelector(".btn__close-read-panel"),
+  autocompleteList: document.getElementById("autocomplete__list"),
 };
 
 export const elementStrings = {

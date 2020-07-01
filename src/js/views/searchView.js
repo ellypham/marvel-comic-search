@@ -1,7 +1,6 @@
 import { elements } from "./base";
 
 // Autocomplete
-const autocompleteList = document.getElementById("autocomplete__list");
 let currentFocus;
 
 const searchCharacter = async (searchText) => {
@@ -23,7 +22,7 @@ const searchCharacter = async (searchText) => {
 
   if (searchText.length === 0) {
     matches = 0;
-    autocompleteList.innerHTML = "";
+    elements.autocompleteList.innerHTML = "";
   }
 
   outputHtml(matches, searchText);
@@ -42,16 +41,16 @@ const outputHtml = (matches) => {
     `
       )
       .join("");
-    autocompleteList.innerHTML = html;
+    elements.autocompleteList.innerHTML = html;
 
-    const list = autocompleteList.getElementsByTagName("div");
+    const list = elements.autocompleteList.getElementsByTagName("div");
 
     list.forEach((item) => {
       item.addEventListener("click", (e) => {
         elements.searchInput.value = item.getElementsByTagName(
           "h4"
         )[0].innerHTML;
-        autocompleteList.innerHTML = "";
+        elements.autocompleteList.innerHTML = "";
       });
     });
   }
@@ -81,7 +80,7 @@ const removeActive = (x) => {
 };
 
 elements.searchInput.addEventListener("keydown", (e) => {
-  let x = autocompleteList;
+  let x = elements.autocompleteList;
   if (x) x = x.getElementsByTagName("div");
   if (e.keyCode == 40) {
     currentFocus++;
@@ -97,7 +96,7 @@ elements.searchInput.addEventListener("keydown", (e) => {
       elements.searchInput.value = x[currentFocus].getElementsByTagName(
         "h4"
       )[0].innerHTML;
-      autocompleteList.innerHTML = "";
+      elements.autocompleteList.innerHTML = "";
     }
   }
 });
@@ -135,6 +134,18 @@ export const renderCharacterResult = (character) => {
         <a href="#feature" class="back">Back to Search</a>
         <h2>${character.name}</h2>
         <p>${character.description}</p>
+      </div>
+      </div>
+    </div>
+  `;
+  elements.searchResult.insertAdjacentHTML("afterbegin", markup);
+};
+
+export const renderErrorMessage = (search) => {
+  const markup = `
+    <div class="container">
+      <div class="character__info">
+        <h2>${search} cannot be found</h2>
       </div>
       </div>
     </div>

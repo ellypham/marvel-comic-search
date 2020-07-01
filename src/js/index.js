@@ -18,6 +18,7 @@ const controlSearch = async (e) => {
   let query;
   if (e.target.closest(".search")) {
     query = elements.searchInput.value;
+    elements.autocompleteList.innerHTML = "";
     console.log("query", query);
   } else if (e.target.closest(".featured-characters__card")) {
     query = e.target.closest(".featured-characters__card").dataset.charname;
@@ -37,7 +38,8 @@ const controlSearch = async (e) => {
       searchView.renderCharacterResult(state.search.result[0]);
       controlComics();
     } catch (error) {
-      console.log(error);
+      console.log("There is an error here");
+      searchView.renderErrorMessage(query);
     }
   }
 };
