@@ -425,12 +425,13 @@ li {
 .read__list {
   max-width: 80%;
   margin: 0 auto;
+  position: relative;
 }
 
 .read__item {
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   position: relative;
   label {
@@ -493,5 +494,7 @@ li {
 .btn__delete {
   border: none;
   background: none;
+  position: absolute;
+  right: -30px;
 }
 
