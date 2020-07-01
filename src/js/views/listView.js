@@ -16,7 +16,9 @@ export const hideReadList = () => {
 
 export const renderItem = (item) => {
   const markup = `
-    <li class='read__item' data-itemid=${item.id}>
+    <li class='read__item ${
+      item.read === true ? "read__item-strike" : ""
+    }' data-itemid=${item.id}>
       <label>
         ${item.title}
         <input type='checkbox' id='read' class='read__checkbox'/>

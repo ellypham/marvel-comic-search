@@ -119,6 +119,17 @@ elements.readList.addEventListener("change", (e) => {
   listView.toggleItem(id);
 });
 
+// Restore comic lists on page load
+window.addEventListener("load", () => {
+  state.list = new List();
+
+  // Restore list
+  state.list.readStorage();
+
+  // Render the existing list
+  state.list.items.forEach((item) => listView.renderItem(item));
+});
+
 elements.readListBtn.addEventListener("click", () => {
   listView.showReadList();
 });
