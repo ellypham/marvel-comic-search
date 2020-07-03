@@ -5,13 +5,11 @@ export const clearResults = () => {
 };
 
 export const showReadList = () => {
-  elements.readPanel.style.width = "50%";
-  console.log("show read list");
+  elements.readPanel.style.width = "85%";
 };
 
 export const hideReadList = () => {
   elements.readPanel.style.width = "0%";
-  console.log("hide read list");
 };
 
 export const renderItem = (item) => {
