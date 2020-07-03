@@ -42,7 +42,11 @@ li {
   background-color: black;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  animation: fadein 300ms; }
+
+.fadeout {
+  animation: fadeout 1s; }
 
 @keyframes fadeout {
   from {

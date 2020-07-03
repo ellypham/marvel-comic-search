@@ -59,6 +59,11 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadein 300ms;
+}
+
+.fadeout {
+  animation: fadeout 1s;
 }
 
 @keyframes fadeout {

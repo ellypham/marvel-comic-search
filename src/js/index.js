@@ -31,8 +31,8 @@ const controlSearch = async (e) => {
 
   if (query) {
     try {
-      renderLoader(elements.searchResult);
       await state.search.getResults();
+      renderLoader(elements.searchResult);
       searchView.clearResults();
       comicsView.clearResults();
       searchView.renderCharacterResult(state.search.result[0]);
@@ -63,7 +63,7 @@ const controlComics = async () => {
 
   if (charId) {
     try {
-      // renderLoader(elements.comicsSection);
+      renderLoader(elements.comicsSection);
       await state.comicResults.getComics();
       comicsView.renderComicResults(state.comicResults.comicResults);
       clearLoader();

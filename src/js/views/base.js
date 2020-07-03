@@ -34,20 +34,13 @@ export const renderLoader = (parent) => {
   parent.insertAdjacentHTML("afterbegin", loader);
 };
 
-// export const clearLoader = setInterval(() => {
-//   const loader = document.querySelector(`.${elementStrings.loader}`);
-//   console.log("loader", loader);
-//   if (!loader.style.opacity) {
-//     loader.style.opacity = 1;
-//   }
-//   if (loader.style.opacity > 0) {
-//     loader.style.opacity -= 0.1;
-//   } else {
-//     loader.parentElement.removeChild(loader);
-//   }
-// }, 200);
-
 export const clearLoader = () => {
   const loader = document.querySelector(`.${elementStrings.loader}`);
-  if (loader) loader.parentElement.removeChild(loader);
+  loader.classList.add("fadeout");
+  if (loader) {
+    loader.classList.add("fadeout");
+    setTimeout(() => {
+      loader.parentElement.removeChild(loader);
+    }, 1000);
+  }
 };
