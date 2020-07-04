@@ -5,7 +5,7 @@ export const clearResults = () => {
 };
 
 export const showReadList = () => {
-  elements.readPanel.style.width = "85%";
+  elements.readPanel.style.width = "90%";
 };
 
 export const hideReadList = () => {
