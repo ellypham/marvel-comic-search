@@ -19,8 +19,6 @@ export const elementStrings = {
 };
 
 export const renderLoader = (parent) => {
-  console.log("renderloader");
-  console.log("parent", parent);
   const loader = `
     <div class='${elementStrings.loader}'>
       <div class="loader">

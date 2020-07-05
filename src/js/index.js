@@ -45,7 +45,6 @@ const controlSearch = async (e) => {
 };
 
 elements.searchResult.addEventListener("click", (e) => {
-  console.log("search e", e.target.matches(".back"));
   if (e.target.matches(".back")) {
     searchView.showFeature();
     searchView.clearResults();

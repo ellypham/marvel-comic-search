@@ -89,13 +89,11 @@ elements.searchInput.addEventListener("keydown", (e) => {
     currentFocus--;
     addActive(x);
   } else if (e.keyCode == 13) {
-    // e.preventDefault();
     if (currentFocus > -1) {
       if (x)
-        console.log(x[currentFocus].getElementsByTagName("h4")[0].innerHTML);
-      elements.searchInput.value = x[currentFocus].getElementsByTagName(
-        "h4"
-      )[0].innerHTML;
+        elements.searchInput.value = x[currentFocus].getElementsByTagName(
+          "h4"
+        )[0].innerHTML;
       elements.autocompleteList.innerHTML = "";
     }
   }
