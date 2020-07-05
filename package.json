@@ -1,7 +1,9 @@
 {
   "name": "marvel",
   "version": "1.0.0",
-  "engines": "8.11.0",
+  "engines": {
+    "node": "8.11.0"
+  },
   "description": "Marvel API Project",
   "main": "script.js",
   "scripts": {
