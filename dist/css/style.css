@@ -412,6 +412,10 @@ li {
   position: absolute;
   right: -30px; }
 
+@media (min-width: 1400px) {
+  .character__info {
+    max-width: 70%; } }
+
 @media (max-width: 1050px) {
   .featured-characters__card {
     max-width: 18%; } }
