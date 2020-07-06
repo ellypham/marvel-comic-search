@@ -12,6 +12,7 @@ export const elements = {
   readPanel: document.querySelector(".read__panel"),
   panelCloseBtn: document.querySelector(".btn__close-read-panel"),
   autocompleteList: document.getElementById("autocomplete__list"),
+  autocompleteCard: document.querySelector(".autocomplete__card"),
 };
 
 export const elementStrings = {

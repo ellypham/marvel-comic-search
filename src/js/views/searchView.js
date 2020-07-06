@@ -34,9 +34,8 @@ const outputHtml = (matches) => {
     const html = matches
       .map(
         (match) => `
-      <div class="autocomplete__card">
+      <div class="autocomplete__card" data-charname="${match}">
         <h4>${match}</h4>
-
       </div>
     `
       )

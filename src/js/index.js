@@ -22,6 +22,8 @@ const controlSearch = async (e) => {
     console.log("query", query);
   } else if (e.target.closest(".featured-characters__card")) {
     query = e.target.closest(".featured-characters__card").dataset.charname;
+  } else if (e.target.closest(".autocomplete__card")) {
+    query = e.target.closest(".autocomplete__card").dataset.charname;
   }
 
   searchView.clearInput();
@@ -139,5 +141,6 @@ elements.panelCloseBtn.addEventListener("click", listView.hideReadList);
 //handlers
 elements.searchForm.addEventListener("submit", controlSearch);
 elements.featureList.addEventListener("click", controlSearch);
+elements.autocompleteList.addEventListener("click", controlSearch);
 elements.comicPages.addEventListener("click", paginationButtons);
 elements.comicResults.addEventListener("click", controlList);
