@@ -125,7 +125,7 @@ export const renderCharacterResult = (character) => {
     <div class="container">
       <div class="character__info">
       <figure>
-        <img src=${character.thumbnail.path}.${character.thumbnail.extension} >
+        <img src=${character.thumbnail.path}.${character.thumbnail.extension} alt="">
       </figure>
       <div class="character__copy">
         <a href="#feature" class="back">Back to Search</a>

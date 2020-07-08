@@ -80,6 +80,7 @@ const paginationButtons = (e) => {
     const goToPage = parseInt(btn.dataset.goto, 10);
     comicsView.clearResults();
     comicsView.renderComicResults(state.comicResults.comicResults, goToPage);
+    elements.comicPages.setAttribute("aria-hidden", false);
   }
 };
 
@@ -135,8 +136,8 @@ elements.readListBtn.addEventListener("click", () => {
   listView.showReadList();
 });
 
-//
 elements.panelCloseBtn.addEventListener("click", listView.hideReadList);
+elements.readPanel.addEventListener("keydown", listView.trapTabKey);
 
 //handlers
 elements.searchForm.addEventListener("submit", controlSearch);

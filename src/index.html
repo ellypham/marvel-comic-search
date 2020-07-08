@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html& lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,16 +17,16 @@
         </div>
         <div class="header__copy">
           <h1>Comic Reads</h1>
-          <button class="btn__read-list">Show Comic List</button>
+          <button class="btn__read-list" aria-label="Comic reading list">Show Comic List</button>
         </div>
         <form class="search" autocomplete="off">
           <div class="search__input">
               <label for="search">Search for comics by character:</label>
                 <div class="search__field_container">
                   <span class="search__icon">
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search" aria-hidden="true"></i>
                   </span>
-                  <input class="search__field" type="text" placeholder="Type character name">
+                  <input id="search" class="search__field" type="text" placeholder="Type character name" type="search">
                   <div id='autocomplete__list'>
 
                   </div>
@@ -46,7 +46,7 @@
           <li class="featured-characters__card" data-charName="Black Panther">
             <div class="card-img">
               <figure>
-                <img src='img/black_panther.jpg' alt='Black Panther'>
+                <img src='img/black_panther.jpg' alt=''>
               </figure>
 
             </div>
@@ -58,7 +58,7 @@
           <li class="featured-characters__card" data-charName="Spider-Man">
             <div class="card-img">
               <figure>
-                <img src='img/spider_man.jpg' alt='Spider Man'>
+                <img src='img/spider_man.jpg' alt=''>
               </figure>
 
             </div>
@@ -70,7 +70,7 @@
           <li class="featured-characters__card" data-charName="Iron Man">
             <div class="card-img">
               <figure>
-                <img src='img/iron_man.jpg' alt='Iron Man'>
+                <img src='img/iron_man.jpg' alt=''>
               </figure>
 
             </div>
@@ -82,7 +82,7 @@
           <li class="featured-characters__card" data-charName="Captain America">
             <div class="card-img">
               <figure>
-                <img src='img/captain_america.jpg' alt='Captain America'>
+                <img src='img/captain_america.jpg' alt=''>
               </figure>
 
             </div>
@@ -94,7 +94,7 @@
           <li class="featured-characters__card" data-charName="Black Widow">
             <div class="card-img">
               <figure>
-                <img src='img/black_widow.jpg' alt='Black Widow'>
+                <img src='img/black_widow.jpg' alt=''>
               </figure>
 
             </div>
@@ -106,7 +106,7 @@
           <li class="featured-characters__card" data-charName="Hulk">
             <div class="card-img">
               <figure>
-                <img src='img/hulk.jpg' alt='Hulk'>
+                <img src='img/hulk.jpg' alt=''>
               </figure>
 
             </div>
@@ -118,7 +118,7 @@
           <li class="featured-characters__card" data-charName="Hawkeye">
             <div class="card-img">
               <figure>
-                <img src='img/hawkeye.jpg' alt='Hawkeye'>
+                <img src='img/hawkeye.jpg' alt=''>
               </figure>
 
             </div>
@@ -130,7 +130,7 @@
           <li class="featured-characters__card" data-charName="Thor">
             <div class="card-img">
               <figure>
-                <img src='img/thor.jpg' alt='Thor'>
+                <img src='img/thor.jpg' alt=''>
               </figure>
 
             </div>
@@ -153,7 +153,7 @@
 
         </ul>
 
-        <div class="comics__pages">
+        <div class="comics__pages" role="navigation" aria-label="Pagination Navigation" aria-hidden=true>
 
         </div>
 
@@ -162,9 +162,9 @@
 
     <section class="read">
 
-      <div class='read__panel'>
-        <button class="btn__close-read-panel">
-          <i class="fas fa-times fa-2x"></i>
+      <div class='read__panel' aria-hidden="true">
+        <button class="btn__close-read-panel" aria-label="Close Panel">
+          <i class="fas fa-times fa-2x" aria-hidden="true"></i>
         </button>
         <h2>Comic Reading List</h2>
         <ul class="read__list">

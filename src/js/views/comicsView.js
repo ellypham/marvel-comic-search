@@ -8,18 +8,20 @@ export const clearResults = () => {
 const renderComic = (comic) => {
   const markup = `
     <li>
-      <img src=${comic.thumbnail.path}.${comic.thumbnail.extension} />
+      <img src=${comic.thumbnail.path}.${comic.thumbnail.extension} alt=""/>
       <p>${comic.title}</p>
-      <button class="btn__list">Add to list</button>
+      <button class="btn__list" aria-label="Add Comic to read list">Add to list</button>
     </li>
   `;
   elements.comicResults.insertAdjacentHTML("beforeend", markup);
 };
 
 const createPageButtons = (page, type) => `
-  <button class="btn__pagination" data-goto=${
-    type === "left" ? page - 1 : page + 1
-  }>
+  <button class="btn__pagination btn-chevron-${
+    type === "left" ? "left" : "right"
+  } " aria-label="Current page ${page}, Go to page ${
+  type === "left" ? page - 1 : page + 1
+}" data-goto=${type === "left" ? page - 1 : page + 1}>
     <span class="chevron__icon">
       <i class="fas fa-chevron-${type === "left" ? "left" : "right"} fa-7x"></i>
     </span>
@@ -41,6 +43,11 @@ const renderPageButtons = (page, numResults, resPerPage) => {
   }
 
   elements.comicPages.insertAdjacentHTML("afterbegin", button);
+
+  //toggle aria hidden
+  elements.comicPages.attributes["aria-hidden"].value == "true"
+    ? elements.comicPages.setAttribute("aria-hidden", false)
+    : elements.comicPages.setAttribute("aria-hidden", true);
 };
 
 export const renderComicResults = (comics, page = 1, resPerPage = 4) => {
