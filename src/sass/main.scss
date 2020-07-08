@@ -333,6 +333,7 @@ li {
 
 .comics {
   background-color: $darkGrey;
+  padding-bottom: 2rem;
 }
 
 .comics__results {
@@ -506,6 +507,12 @@ li {
   background: none;
   position: absolute;
   right: -30px;
+}
+
+footer {
+  p {
+    text-align: center;
+  }
 }
 
 @media (min-width: 1400px) {

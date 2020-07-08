@@ -265,7 +265,8 @@ li {
   padding: 2rem; }
 
 .comics {
-  background-color: #202020; }
+  background-color: #202020;
+  padding-bottom: 2rem; }
 
 .comics__results {
   display: flex;
@@ -411,6 +412,9 @@ li {
   background: none;
   position: absolute;
   right: -30px; }
+
+footer p {
+  text-align: center; }
 
 @media (min-width: 1400px) {
   .character__info {
