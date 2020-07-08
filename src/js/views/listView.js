@@ -24,12 +24,9 @@ export const showReadList = () => {
 
   // Convert NodeList to Array
   focusableElements = Array.prototype.slice.call(focusableElements);
-  console.log("focusableElements", focusableElements);
 
   const firstTabStop = focusableElements[0];
-  console.log({ firstTabStop });
   const lastTabStop = focusableElements[focusableElements.length - 1];
-  console.log({ lastTabStop });
 
   elements.readPanel.style.width = "90%";
   if (elements.readPanel.attributes["aria-hidden"].value == "true") {
@@ -41,10 +38,8 @@ export const showReadList = () => {
 };
 
 export const trapTabKey = (e) => {
-  console.log("trapTabKey");
   // Check for TAB key press
   if (e.keyCode === 9) {
-    console.log("tab key has been pressed");
     // SHIFT + TAB
     if (e.shiftkey) {
       if (document.activeElement === firstTabStop) {
@@ -56,7 +51,6 @@ export const trapTabKey = (e) => {
 
   // ESCAPE;
   if (e.keyCode === 27) {
-    console.log("esc key has been pressed");
     hideReadList();
   }
 };

@@ -49,6 +49,5 @@ export default class List {
 
     // Restoring items from localStorage
     if (storage) this.items = storage;
-    console.log("storage", storage);
   }
 }

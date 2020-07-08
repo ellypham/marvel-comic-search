@@ -16,7 +16,6 @@ export default class Search {
         `https://gateway.marvel.com/v1/public/characters?name=${this.query}&apikey=${publickey}`
       );
       this.result = res.data.data.results;
-      console.log("api res ", this.result);
     } catch (error) {
       console.log(error);
     }
