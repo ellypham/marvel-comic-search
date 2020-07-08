@@ -285,8 +285,8 @@ li {
   color: #ffffff; }
 
 .comics__results img {
-  width: 100%;
-  height: 44rem;
+  width: 80%;
+  height: 35rem;
   object-fit: cover; }
 
 .btn__list {
@@ -315,18 +315,18 @@ li {
 .comics__pages {
   position: relative; }
 
-.fa-chevron-left {
+.btn-chevron-left {
   position: absolute;
   top: -30rem;
-  left: -7rem; }
+  left: -5rem; }
 
-.fa-chevron-right {
+.btn-chevron-right {
   position: absolute;
   top: -30rem;
-  right: -7rem; }
+  right: -5rem; }
 
 .btn__pagination {
-  background-color: #202020;
+  background-color: rgba(255, 255, 255, 0);
   border: none; }
 
 .chevron__icon {
@@ -416,6 +416,12 @@ li {
   .character__info {
     max-width: 70%; } }
 
+@media (max-width: 1400px) {
+  .comics__results img {
+    height: 25rem; }
+  .btn-chevron-right, .btn-chevron-left {
+    top: -25rem; } }
+
 @media (max-width: 1050px) {
   .featured-characters__card {
     max-width: 18%; } }
@@ -430,9 +436,8 @@ li {
     height: 25rem; }
   .comics__results img {
     height: 20rem; }
-  .fa-chevron-right, .fa-chevron-left {
-    position: absolute;
-    top: -17rem; }
+  .btn-chevron-right, .btn-chevron-left {
+    top: -23rem; }
   .fa-7x {
     font-size: 5em !important; } }
 
@@ -473,13 +478,15 @@ li {
       height: 13rem; }
     .comics__results p {
       font-size: 50%; }
+  .comics__pages {
+    height: 22px; }
   .btn__list {
     font-size: 50%; }
   .fa-7x {
     font-size: 3em !important; }
-  .fa-chevron-right {
+  .btn-chevron-right {
     top: -2rem;
     right: 11rem; }
-  .fa-chevron-left {
+  .btn-chevron-left {
     top: -2rem;
     left: 11rem; } }

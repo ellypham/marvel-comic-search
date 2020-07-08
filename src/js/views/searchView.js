@@ -141,7 +141,8 @@ export const renderCharacterResult = (character) => {
 export const renderErrorMessage = (search) => {
   const markup = `
     <div class="container">
-      <div class="character__info">
+      <div class="character__copy">
+      <a href="#feature" class="back">Back to Search</a>
         <h2>${search} cannot be found</h2>
       </div>
       </div>
