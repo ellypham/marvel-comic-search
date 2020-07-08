@@ -36,6 +36,7 @@ npm run build
 ## Built With
 
 Vanilla JavaScript
+Marvel API - https://developer.marvel.com/docs
 
 ## Author
 
@@ -47,4 +48,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
+## Acknowledgments
+
+* Marvel Developer API
 
